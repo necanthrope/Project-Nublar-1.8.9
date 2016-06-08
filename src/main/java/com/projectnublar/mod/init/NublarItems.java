@@ -9,9 +9,9 @@ import com.projectnublar.mod.items.ItemDebug;
 import com.projectnublar.mod.items.ItemFossil;
 import com.projectnublar.mod.items.ItemFragGrenade;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class NublarItems {
@@ -53,7 +53,9 @@ public class NublarItems {
 	
 	public static void registerRender(Item item)
 	{
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		//Never again use this
+		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 	
 }
