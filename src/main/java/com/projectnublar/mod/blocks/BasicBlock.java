@@ -10,19 +10,19 @@ public class BasicBlock extends Block {
 	{
 		super(material);
 		this.setUnlocalizedName(name);
-		this.setCreativeTab(CreativeTabs.tabDecorations);
+		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 		this.setStepSound(soundTypeWood);
 	}
 	
-	public BasicBlock(String unlocalizedName, float hardness, float resistance)
+	public BasicBlock(String name, float hardness, float resistance)
 	{
-		this(unlocalizedName, Material.rock, hardness, resistance);
+		this(name, Material.rock, hardness, resistance);
 	}
 	
-	public BasicBlock(String unlocalizedName)
+	public BasicBlock(String name)
 	{
-		this(unlocalizedName, 2.0f, 10.0f);
+		this(name, 2.0f, 10.0f);
 	}
 }

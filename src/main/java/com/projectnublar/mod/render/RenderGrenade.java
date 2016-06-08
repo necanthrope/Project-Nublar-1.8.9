@@ -7,8 +7,10 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -22,10 +24,10 @@ public class RenderGrenade extends Render<EntityFragGrenade> {
     private RenderItem renderItem;
     private Item item;
 
-    public RenderGrenade(Item par2) {
-    	super(Minecraft.getMinecraft().getRenderManager());
+    public RenderGrenade(RenderManager rm) {
+    	super(rm);
         this.renderItem = Minecraft.getMinecraft().getRenderItem();
-        this.item = par2;
+        this.item = (Item.getItemFromBlock(Blocks.tnt));
     }
 
     @Override

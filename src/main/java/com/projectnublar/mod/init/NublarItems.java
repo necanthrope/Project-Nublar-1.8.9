@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.projectnublar.mod.items.ItemAmber;
 import com.projectnublar.mod.items.ItemDebug;
+import com.projectnublar.mod.items.ItemFossil;
 import com.projectnublar.mod.items.ItemFragGrenade;
 
 import net.minecraft.client.Minecraft;
@@ -18,11 +20,15 @@ public class NublarItems {
 	
 	public static Item frag_grenade = new ItemFragGrenade();
 	public static Item debug_item = new ItemDebug();
+	public static Item amber = new ItemAmber();
+	public static Item fossil = new ItemFossil();
 	
-	public static void init()
+	public static void create()
 	{
 		items.put(frag_grenade, "frag_grenade");
 		items.put(debug_item, "debug_item");
+		items.put(amber, "amber");
+		items.put(fossil, "fossil");
 	}
 	
 	public static void register()

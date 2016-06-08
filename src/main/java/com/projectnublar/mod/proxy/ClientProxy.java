@@ -15,15 +15,13 @@ public class ClientProxy extends CommonProxy {
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		super.preInit(event);
-		
+		NublarItems.registerItemRenders();
+		NublarEntities.registerEntityRenders();
 	}
 	
 	@Override
 	public void init(FMLInitializationEvent event)
 	{
-		NublarEntities.registerEntityRenders();
-		NublarItems.registerItemRenders();
-		
 		ClientEvents.init();
 		super.init(event);
 	}

@@ -13,15 +13,17 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		NublarItems.init();
-		NublarBlocks.init();
+		NublarItems.create();
+		NublarBlocks.create();
 		
 		NublarItems.register();
+		NublarBlocks.register();
+		
+		NublarEntities.create();
 	}
 	
 	public void init(FMLInitializationEvent event)
 	{
-		NublarEntities.init();
 		CommonEvents.init();
 	}
 
