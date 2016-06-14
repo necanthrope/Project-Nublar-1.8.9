@@ -15,21 +15,21 @@ public class DNAHelper {
 	//private Random rand = new Random();
 	
 	public String create(EnumSpecies species) {
-		float f1 = species.test1;
-		float f2 = species.test2;
+		float baseSpeed = species.baseSpeed;
+		float intelligence = species.intelligence;
 		float f3 = species.test3;
 		boolean isMale = species.isMale;
-		boolean bool2 = species.b2;
+		boolean naturallySpawned = species.naturallySpawned;
 		
 		//TODO: modify values randomly
 		
-		String hex1 = Float.toHexString(f1);
-		String hex2 = Float.toHexString(f2);
+		String hex1 = Float.toHexString(baseSpeed);
+		String hex2 = Float.toHexString(intelligence);
 		String hex3 = Float.toHexString(f3);
 		String b1 = "0";
 		String b2 = "0";
 		if(isMale) b1 = "1";
-		if(bool2) b2 = "1";
+		if(naturallySpawned) b2 = "1";
 		
 		//put all together
 		LinkedList<String> strings = new LinkedList<String>();
@@ -52,13 +52,13 @@ public class DNAHelper {
 	{
 		String[] values = dnaString.split("-");
 		NBTTagCompound nbt = new NBTTagCompound();
-		nbt.setFloat("test1", Float.parseFloat(values[0]));
-		nbt.setFloat("test2", Float.parseFloat(values[1]));
+		nbt.setFloat("baseSpeed", Float.parseFloat(values[0]));
+		nbt.setFloat("intelligence", Float.parseFloat(values[1]));
 		nbt.setFloat("test3", Float.parseFloat(values[2]));
 		
 		//manual check for booleans
 		if(values[4] == "1") nbt.setBoolean("isMale", true); else nbt.setBoolean("isMale", false);
-		if(values[5] == "1") nbt.setBoolean("bool2", true); else nbt.setBoolean("bool2", false);
+		if(values[5] == "1") nbt.setBoolean("naturallySpawned", true); else nbt.setBoolean("naturallySpawned", false);
 		
 		return nbt;
 	}
